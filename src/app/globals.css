@@ -1,0 +1,93 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap'); */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+
+  /* font-family: 'Poppins', sans-serif; */
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar,
+.layout {
+  height: calc(100vh - 78px);
+}
+
+.layout::-webkit-scrollbar {
+  width: 10px;
+}
+
+.layout::-webkit-scrollbar-thumb {
+  background: #0095ff;
+  border-radius: 100px;
+}
+
+.layout::-webkit-scrollbar-track {
+  background: #2298ff51;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 7px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  opacity: 0;
+  border-radius: 100px;
+  transition: opacity 0.8s ease;
+}
+
+.sidebar:hover::-webkit-scrollbar-thumb {
+  background: #36a9fc2f;
+  border-radius: 100px;
+  opacity: 1;
+}
+
+
+.card {
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+
+.giveLineHeight {
+  line-height: 80px;
+}
+
+@media screen and (min-width: 992px) {
+  .giveLineHeight {
+    line-height: 80px;
+  }
+}
+
+/* For medium screens */
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .giveLineHeight {
+    line-height: 60px;
+  }
+}
+
+/* For small screens */
+@media screen and (max-width: 767px) and (min-width: 400px) {
+  .giveLineHeight {
+    line-height: 40px;
+  }
+}
+
+@media screen and (max-width: 399px) {
+  .giveLineHeight {
+    line-height: 30px;
+  }
+}

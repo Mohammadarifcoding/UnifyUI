@@ -1,4 +1,4 @@
-import CodeBox from '../../../Shared/CodeBox/CodeBox';
+import CodeBox from '@/Shared/CodeBox/CodeBox';
 
 const codeStr = `export const Form = () => {
 return (
@@ -27,16 +27,16 @@ return (
 const Form5 = () => {
     return (
         <CodeBox codeStr={codeStr}>
-            <div className="w-full mx-auto lg:w-[500px] drop-shadow-lg bg-white">
+            <div className="mx-auto w-full bg-white drop-shadow-lg lg:w-[500px]">
                 <form className="p-12">
-                    <h1 className="backdrop-blur-sm text-4xl pb-8">Login</h1>
+                    <h1 className="pb-8 text-4xl backdrop-blur-sm">Login</h1>
                     <div className="space-y-5">
                         <label htmlFor="email" className="block">
                             Email
                         </label>
                         <div className="relative">
-                            <input id="email" type="email" placeholder="example@gmail.com" className="p-3 block w-full pl-10 drop-shadow-lg outline-none" />
-                            <span className="absolute top-1/4 left-2">
+                            <input id="email" type="email" placeholder="example@gmail.com" className="block w-full p-3 pl-10 outline-none drop-shadow-lg" />
+                            <span className="absolute left-2 top-1/4">
                                 <svg viewBox="0 0 24 24" fill="none" className="inline-block w-6" xmlns="http://www.w3.org/2000/svg">
                                     <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                                     <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
@@ -52,12 +52,12 @@ const Form5 = () => {
                                 </svg>
                             </span>
                         </div>
-                        <label htmlFor="password" className="block">
+                        <label htmlFor="pass" className="block">
                             Password
                         </label>
                         <div className="relative">
-                            <input id="pass" type="password" placeholder=".............." className="p-3 block w-full pl-10 drop-shadow-lg outline-none" />
-                            <span className="absolute top-1/4 left-2">
+                            <input id="pass" type="password" placeholder=".............." className="block w-full p-3 pl-10 outline-none drop-shadow-lg" />
+                            <span className="absolute left-2 top-1/4">
                                 <svg viewBox="0 0 24 24" fill="none" className="inline-block w-6" xmlns="http://www.w3.org/2000/svg">
                                     <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                                     <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
@@ -75,7 +75,7 @@ const Form5 = () => {
                     {/* button type will be submit for handling form submission*/}
                     <button
                         type="button"
-                        className="py-2 px-5 mb-4 mt-6 shadow-lg before:block before:-left-1 before:-top-1 before:bg-black before:absolute before:h-0 before:w-0 before:hover:w-[100%] before:hover:h-[100%]  before:duration-500 before:-z-40 after:block after:-right-1 after:-bottom-1 after:bg-black after:absolute after:h-0 after:w-0 after:hover:w-[100%] after:hover:h-[100%] after:duration-500 after:-z-40 bg-white relative inline-block"
+                        className="relative mb-4 mt-6 inline-block bg-white px-5 py-2 shadow-lg before:absolute before:-left-1 before:-top-1 before:-z-40 before:block before:h-0  before:w-0 before:bg-black before:duration-500 after:absolute after:-bottom-1 after:-right-1 after:-z-40 after:block after:h-0 after:w-0 after:bg-black after:duration-500 before:hover:h-[100%] before:hover:w-[100%] after:hover:h-[100%] after:hover:w-[100%]"
                     >
                         Submit
                     </button>

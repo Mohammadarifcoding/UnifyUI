@@ -1,23 +1,35 @@
+import CodeBox from '@/Shared/CodeBox/CodeBox';
 
-import CodeBox from '../../../Shared/CodeBox/CodeBox';
+const codeStr = `const Tooltip2 = () => {
+    return (
+        <div className="flex items-center justify-center">
+            <div className="group relative h-10">
+                {/* Hover button */}
+                <button className="inline rounded-md border border-[#0EA5E9] bg-slate-900 px-3 py-2 text-[#0EA5E9]">Hover on me</button>
+                {/* Hover Text */}
+                <div className="absolute -right-[200px] top-0 flex cursor-pointer whitespace-nowrap opacity-0 duration-500 hover:hidden group-hover:-right-[220px] group-hover:opacity-100">
+                    <p className="h-fit rounded-md bg-[#0EA5E9] px-3 py-2 text-white shadow-[0px_0px_10px_0px_#0EA5E9]"> This is the hover text</p>
+                    <span className="absolute -left-2 top-[50%] h-0 w-0 -translate-y-1/2 -rotate-[135deg] border-b-[20px] border-r-[20px] border-b-transparent border-r-[#0EA5E9] shadow-[0px_0px_10px_0px_#0EA5E9]"></span>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default Tooltip2;`;
 
 const Tooltip2 = () => {
-    const codestr = `
-<div className="relative  inline h-10  group">
-    {/* Hover button */}
-    <button className="px-3 py-2 bg-slate-100 border border-slate-700 rounded-md">Hover on me</button>
-    {/* Hover Text */}
-    <p className="absolute -right-[150%] -bottom-3 h-fit px-3 py-2  duration-600 hidden opacity-0 group-hover:opacity-100 group-hover:block bg-blue-700 text-white rounded-md"> This is the hover text </p>
-</div>
-    `;
     return (
-        <CodeBox codeStr={codestr}>
-            <div className="flex justify-center items-center">
-                <div className="relative  inline h-10  group">
+        <CodeBox codeStr={codeStr}>
+            <div className="flex items-center justify-center">
+                <div className="group relative h-10">
                     {/* Hover button */}
-                    <button className="px-3 py-2 bg-slate-100 border border-slate-700 rounded-md">Hover on me</button>
+                    <button className="inline rounded-md border border-[#0EA5E9] bg-slate-900 px-3 py-2 text-[#0EA5E9]">Hover on me</button>
                     {/* Hover Text */}
-                    <p className="absolute -right-[150%] -bottom-0 top-0 h-fit px-3 py-2  duration-600 hidden opacity-0 group-hover:opacity-100 group-hover:block bg-blue-700 text-white rounded-md">   This is the hover text</p>
+                    <div className="absolute -right-[200px] top-0 flex cursor-pointer whitespace-nowrap opacity-0 duration-500 hover:hidden group-hover:-right-[220px] group-hover:opacity-100">
+                        <p className="h-fit rounded-md bg-[#0EA5E9] px-3 py-2 text-white shadow-[0px_0px_10px_0px_#0EA5E9]"> This is the hover text</p>
+                        <span className="absolute -left-2 top-[50%] h-0 w-0 -translate-y-1/2 -rotate-[135deg] border-b-[20px] border-r-[20px] border-b-transparent border-r-[#0EA5E9] shadow-[0px_0px_10px_0px_#0EA5E9]"></span>
+                    </div>
                 </div>
             </div>
         </CodeBox>
