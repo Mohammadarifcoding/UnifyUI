@@ -1,32 +1,32 @@
-import { NavBar1 } from '@/Components/NavBar/NavBar1/NavBar1';
-import { NavBar2 } from '@/Components/NavBar/NavBar2/NavBar2';
-import { NavBar3 } from '@/Components/NavBar/NavBar3/NavBar3';
-import { NavBar4 } from '@/Components/NavBar/NavBar4/NavBar4';
-import { NavBar5 } from '@/Components/NavBar/NavBar5/NavBar5';
-import { NavBar6 } from '@/Components/NavBar/NavBar6/NavBar6';
+
+import BasicNavbar from '@/components/NavBar/BasicNavbar';
+import { NavBar3 } from '@/components/NavBar/NavBar3';
+import { NavBar4 } from '@/components/NavBar/NavBar4';
+import { NavBar5 } from '@/components/NavBar/NavBar5';
+import { NavBar6 } from '@/components/NavBar/NavBar6';
+import NavbarWithDropdown from '@/components/NavBar/NavbarWithDropdown';
+import Heading from '@/ui/Heading';
 
 export const metadata = {
-    title: 'Navbar Components',
-    description: 'Navbar tailwind components'
+  title: 'Navbar Components',
+  description: 'Navbar tailwind components - Navigate UI'
 };
 
-const Footer = () => {
-    return (
-        <div className="flex flex-col items-center justify-center">
-            <h1 className="mt-10 px-4 text-2xl font-semibold text-gray-100"># Basic NavBar</h1>
-            <NavBar1 />
-            <h1 className="mt-10 px-4 text-2xl font-semibold text-gray-100"># Basic NavBar with Dropdown menu</h1>
-            <NavBar2 />
-            <h1 className="mt-10 px-4 text-2xl font-semibold text-gray-100"># Basic NavBar With Two Ends</h1>
-            <NavBar3 />
-            <h1 className="mt-10 px-4 text-2xl font-semibold text-gray-100"># Basic NavBar With Buttons</h1>
-            <NavBar4 />
-            <h1 className="mt-10 px-4 text-2xl font-semibold text-gray-100"># Basic NavBar With Routes and Buttons</h1>
-            <NavBar5 />
-            <h1 className="mt-10 px-4 text-2xl font-semibold text-gray-100"># Responsive NavBar</h1>
-            <NavBar6 />
-        </div>
-    );
-};
-
-export default Footer;
+export default function FooterPage() {
+  return (
+    <>
+      <Heading>Basic Navbar</Heading>
+      <BasicNavbar />
+      <Heading>Navbar with dropdown menu</Heading>
+      <NavbarWithDropdown />
+      <Heading>Basic Navbar With Three Ends</Heading>
+      <NavBar3 />
+      <Heading>Basic Navbar With Buttons</Heading>
+      <NavBar4 />
+      <Heading>Basic Navbar With Routes and Buttons</Heading>
+      <NavBar5 />
+      <Heading>Responsive Navbar</Heading>
+      <NavBar6 />
+    </>
+  );
+}

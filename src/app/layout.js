@@ -1,38 +1,48 @@
-import Navbar from '@/Shared/Navbar/Navbar';
-import { Inter } from 'next/font/google';
-import './globals.css';
+import Navbar from '@/ui/Navbar';
+import Sidebar from '@/ui/Sidebar';
 import { GoogleAnalytics } from '@next/third-parties/google';
-import { sendGAEvent } from 'ga4';
+import { Inter, Lato } from 'next/font/google';
+import './globals.css';
+import { Providers } from './provider';
 
-const TRACKING_ID = process.env.NEXT_PUBLIC_GA_tracking_id; // YOUR_OWN_TRACKING_ID
 const inter = Inter({ subsets: ['latin'] });
+export const lato = Lato({ subsets: ['latin'], weight: ['100', '300', '400', '700', '900'] });
 
 export const metadata = {
+    metadataBase: new URL('https://navigateui.com'),
     title: { default: 'Navigate UI', template: '%s - Navigate UI' },
-    description: 'UI library for tailwindCSS and react developer'
+    openGraph: {
+        images: '/opengraph-image.png'
+    },
+    description: 'Navigate to a world of free, reusable, and highly customizable Tailwind components',
+    icons: {
+        icon: '/icon.png',
+        shortcut: '/shortcut-icon.png',
+        apple: '/apple-icon.png'
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Navigate UI',
+        description: 'Navigate to a world of free, reusable, and highly customizable Tailwind components',
+        creator: '@navigateui_team'
+    }
 };
 
 export default function RootLayout({ children }) {
-    sendGAEvent(MEASUREMENT_ID, 'page_view');
     return (
-        <html lang="en">
-            <body
-                style={{
-                    background: `
-                    radial-gradient(at 18% 99%, #0f172a 0px, transparent 50%) repeat scroll 0% 0%, 
-                    radial-gradient(at 97% 8%, #0f172a 0px, transparent 50%) repeat scroll 0% 0%, 
-                    radial-gradient(at 79% 82%, #0f172a 0px, transparent 50%) repeat scroll 0% 0%,
-                    radial-gradient(at 96% 10%, #0f172a 0px, transparent 50%) repeat scroll 0% 0%,    
-                    radial-gradient(at 42% 20%, #0f172a 0px, transparent 50%) repeat scroll 0% 0%,
-    radial-gradient(at 4% 49%, #0f172a 0px, transparent 50%) repeat scroll 0% 0%, #0384C6 radial-gradient(at 57% 33%, #0384C6 0px, #0f172a 50%) repeat scroll 0% 0%`,
-                    backgroundAttachment: 'fixed'
-                }}
-                className={`${inter.className} overflow-x-hidden`}
-            >
-                <Navbar />
-                <GoogleAnalytics gaId={TRACKING_ID} />
-                <div className="layout overflow-y-scroll">{children}</div>
+        <html lang="en" suppressHydrationWarning>
+            <body className={`${inter.className} overflow-x-hidden bg-slate-100 selection:bg-sky-500 dark:bg-black/50`}>
+                <Providers>
+                    <Navbar />
+                    <div className="lg:hidden">
+                        <Sidebar />
+                    </div>
+                    <div className="mx-auto max-w-[1400px] px-2 lg:px-10">{children}</div>
+
+                    {/* <Image className="fixed -left-20 top-0 -z-[100] select-none" src="/docs-left.png" width="900" height="900" alt="navigate ui image" /> */}
+                </Providers>
             </body>
+            <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA4_ID} />
         </html>
     );
 }
